@@ -1,9 +1,7 @@
 # Mapping Distance and Density — ArcGIS Spatial Analyst
 
 **Author:** Qandeel Fatima  
-**Program:** BE 22 GIE — Geo-Informatics Engineering  
-**Registration No:** 405125  
-**Lab No:** Lab 3 (Module 5)  
+**Program:** BE Geo-Informatics Engineering  
 **Software:** ArcMap / ArcGIS Spatial Analyst  
 
 ---
