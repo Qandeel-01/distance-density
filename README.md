@@ -4,13 +4,9 @@
 **Program:** BE Geo-Informatics Engineering  
 **Software:** ArcMap / ArcGIS Spatial Analyst  
 
----
-
 ## Overview
 
 This report documents a practical lab exercise on **distance and density analysis** using the ArcGIS Spatial Analyst extension. The exercise covers four tasks that progress from simple straight-line distance surfaces through cost-weighted routing to kernel density mapping, all assembled as repeatable workflows in **ModelBuilder**.
-
----
 
 ## Objectives
 
@@ -22,8 +18,6 @@ By the end of this exercise a student should be able to:
 - Create **density surfaces** using the simple and kernel methods
 - Estimate density using the **attribute values** of point features
 
----
-
 ## Software & Data
 
 | Item | Detail |
@@ -32,8 +26,6 @@ By the end of this exercise a student should be able to:
 | Map documents | `Distance.mxd`, `Density.mxd` |
 | Workflow tool | ModelBuilder (custom `DistanceTools.tbx`) |
 | Coordinate system | Study-area projection (supplied datasets) |
-
----
 
 ## Tasks & Methodology
 
@@ -47,8 +39,6 @@ The **Euclidean Distance** tool produces a raster where each cell stores its sho
 - Straight-line distance surface (greyscale, miles to nearest hospital)
 - Allocation surface (hospital service areas / Thiessen zones)
 - Distance-direction and back-direction surfaces
-
----
 
 ### Task 2 — Cost-Weighted Distance & Least-Cost Path
 
@@ -74,8 +64,6 @@ The two ranked rasters were summed with the **Plus** tool into a single `COST` s
 - Cost-distance and cost-direction surfaces from the power plant
 - **Least-cost path** — the cheapest power-line route from plant to substation
 
----
-
 ### Task 3 — Density Surfaces (Simple & Kernel Methods)
 
 **Scenario:** Mapping the spatial concentration of burglary incidents across a street network.
@@ -95,8 +83,6 @@ The kernel method produces smoother, more interpretable hotspot surfaces. Darker
 
 > **Figure 54.** Kernel density surface highlighting burglary hotspots across the street network. Deep purple clusters identify areas of highest incident concentration; light purple/white areas have sparse activity. The street network is overlaid for spatial context.
 
----
-
 ### Task 4 — Attribute-Weighted Density
 
 **Scenario:** Refining the density surface by weighting each point by its `SCORE` attribute.
@@ -107,8 +93,6 @@ Instead of counting every incident equally, the kernel function ran from the **a
 - Attribute-weighted kernel density surface (burglary SCORE)
 - Attribute-weighted kernel density surface (grand theft SCORE)
 
----
-
 ## Key Findings
 
 | Task | Method | Key Result |
@@ -118,8 +102,6 @@ Instead of counting every incident equally, the kernel function ran from the **a
 | 3 — Kernel Density | Kernel smoothing | Clear burglary hotspots revealed that were invisible in raw point data |
 | 4 — Attribute Density | Weighted kernel | SCORE-weighted surface reflects incident severity, not just frequency |
 
----
-
 ## Discussion
 
 The exercise demonstrated the practical difference between the two distance families. **Straight-line distance** is simple and is used directly where travel is unobstructed (air ambulance). **Cost-weighted distance** is more realistic for overland movement but its cell values are accumulated costs, not distances, so it is used indirectly as the input to a least-cost path rather than read as a map of distance.
@@ -127,8 +109,6 @@ The exercise demonstrated the practical difference between the two distance fami
 The density tasks showed how point observations can be turned into continuous surfaces that expose spatial patterns. The **kernel method** produced smoother, more readable hotspots than the simple method, and **attribute weighting** produced a surface that reflects the importance of each observation rather than treating all points equally.
 
 ModelBuilder proved valuable for assembling multi-step workflows into reproducible models that can be re-run with updated inputs without repeating manual steps.
-
----
 
 ## Repository Structure
 
@@ -144,8 +124,6 @@ ModelBuilder proved valuable for assembling multi-step workflows into reproducib
     ├── 05_kernel_density_hotspots.png
     └── 06_attribute_weighted_density.png
 ```
-
----
 
 ## References
 
